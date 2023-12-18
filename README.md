@@ -1,66 +1,63 @@
-## Foundry
+# Token Smart Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Background
 
-Foundry consists of:
+The smart contract in this repository is part of a 15 day smart contract building challenge. The challenge has three levels of difficulty, namely:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- Basic: The challenges from Day 1 to Day 5
+- Intermediate: The challenges from Day 6 to Day 10
+- Advanced: The challenges from Day 11 to Day 15
 
-## Documentation
+## Challenge Task: Basic 2
 
-https://book.getfoundry.sh/
+Write a smart contract that can create and transfer tokens. The contract should have a mapping that stores the balances of each address. The contract should also have a function to mint new tokens and assign them to the contract owner. The contract should also have a function to transfer tokens from one address to another, only if the sender has enough balance.
 
-## Usage
+## Building
 
-### Build
+### Features:
 
-```shell
-$ forge build
-```
+#### Token Creation:
 
-### Test
+- It manages a custom token with a name, symbol, and decimal base (18 in this case).
+- The initial supply is fixed during deployment.
+- Only the contract owner can mint new tokens, increasing the total supply and their own balance.
 
-```shell
-$ forge test
-```
+#### Token Transfer:
 
-### Format
+- Users can transfer tokens to other addresses.
+- Transfers are verified for sufficient sender balance, non-zero recipient address, and non-zero transfer amount.
 
-```shell
-$ forge fmt
-```
+#### Balance Management:
 
-### Gas Snapshots
+- A mapping tracks the token balance for each address.
+- Users can view their own balance with the balanceOf function.
 
-```shell
-$ forge snapshot
-```
+#### Burn Functionality:
 
-### Anvil
+- Users can burn a portion of their own tokens, permanently reducing their balance and the total supply.
 
-```shell
-$ anvil
-```
+### Usage:
 
-### Deploy
+- Use the transfer function to send tokens between user addresses.
+- The owner can mint new tokens using the mint function.
+  Users can burn their own tokens with the burn function.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+- **Note:** This is a basic implementation and lacks certain features for production use, such as security measures and access control mechanisms. It is intended as a learning exercise and a starting point for exploring tokenization concepts in Solidity.
 
-### Cast
+**Feel free to:**
 
-```shell
-$ cast <subcommand>
-```
+- Modify the contract to add new features or functionalities.
+- Experiment with different deployment parameters and usage scenarios.
+- Contribute to the code or suggest improvements by raising issues or pull requests.
 
-### Help
+## Disclaimer:
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This is provided as a basic example and should not be used in production without proper security and testing. If to be used in production, use at your own risk.
+
+## License
+
+This contract is unlicensed.
+
+## Acknowledgments
+
+This contract was developed and tested using Foundry, a Solidity development and testing platform.
