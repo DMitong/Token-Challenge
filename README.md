@@ -12,8 +12,11 @@ The smart contract in this repository is part of a 15 day smart contract buildin
 
 Write a smart contract that can create and transfer tokens. The contract should have a mapping that stores the balances of each address. The contract should also have a function to mint new tokens and assign them to the contract owner. The contract should also have a function to transfer tokens from one address to another, only if the sender has enough balance.
 
+## Contribution
+
 **Feel free to:**
 
+- Critique the code and send me any comment via <a href="www.x.com/DMitong">Twitter</a> or via <a href="mailto:mitongdapal@gmail.com">Email</a>.
 - Modify the contract to add new features or functionalities.
 - Experiment with different deployment parameters and usage scenarios.
 - Contribute to the code or suggest improvements by raising issues or pull requests.
